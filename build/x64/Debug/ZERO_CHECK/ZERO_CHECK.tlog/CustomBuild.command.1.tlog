@@ -1,0 +1,10 @@
+^C:\APCS\PRINCIPLES OF PROGRAMMING LANGUAGES\PROJECT\LIGHTWEIGHT-CUDA-MLP\BUILD\CMAKEFILES\CBC6431B12342CEAF1D6E4E64C4C6192\GENERATE.STAMP.RULE
+setlocal
+C:\C++\mingw64\bin\cmake.exe "-SC:/APCS/Principles of Programming Languages/Project/lightweight-cuda-mlp" "-BC:/APCS/Principles of Programming Languages/Project/lightweight-cuda-mlp/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/APCS/Principles of Programming Languages/Project/lightweight-cuda-mlp/build/LightweightCUDAMLP.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
