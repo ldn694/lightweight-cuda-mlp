@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <cassert>
 #include <cuda_runtime.h>
+#include <chrono>
 
 #include "Network.cuh"
 #include "LinearLayer.cuh"
@@ -182,6 +183,7 @@ int main()
 
     for (int e = 0; e < epochs; e++)
     {
+        auto start = std::chrono::high_resolution_clock::now();  // Start timing
         std::cout << "Epoch " << (e + 1) << " / " << epochs << std::endl;
 
         float epochLoss = 0.0f;
@@ -217,6 +219,9 @@ int main()
         float testAcc = evaluate(net, dataset.testImages.data(), dataset.testLabels.data(),
                                 dataset.testSize, inputSize, numClasses, batchSize);
         std::cout << "Test Accuracy: " << testAcc << "%" << std::endl;
+        auto end = std::chrono::high_resolution_clock::now();  // End timing
+        std::chrono::duration<float> duration = end - start;
+        std::cout << "  Time: " << duration.count() << " seconds" << std::endl;
     }
     
 
