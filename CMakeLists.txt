@@ -3,6 +3,7 @@ project(LightweightCUDAMLP CXX CUDA)
 
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CUDA_STANDARD 14)
+set(CMAKE_CUDA_ARCHITECTURES "75-real;86")
 
 # Enable relevant compilation flags
 if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
