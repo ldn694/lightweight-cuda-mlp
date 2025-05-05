@@ -1,3 +1,0 @@
-C:/APCS/Principles of Programming Languages/Project/lightweight-cuda-mlp/build/CMakeFiles/lightweight_cudamlp.dir
-C:/APCS/Principles of Programming Languages/Project/lightweight-cuda-mlp/build/CMakeFiles/ALL_BUILD.dir
-C:/APCS/Principles of Programming Languages/Project/lightweight-cuda-mlp/build/CMakeFiles/ZERO_CHECK.dir
