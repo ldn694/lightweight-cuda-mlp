@@ -170,9 +170,9 @@ int main()
 
     // Build network
     Network net;
-    net.addLayer(new LinearLayer(inputSize, 256, batchSize));
+    net.addLayer(new LinearLayer(inputSize, 256));
     net.addLayer(new ReLULayer());
-    net.addLayer(new LinearLayer(256, numClasses, batchSize));
+    net.addLayer(new LinearLayer(256, numClasses));
 
     // Create optimizer
     Optimizer opt(learningRate);

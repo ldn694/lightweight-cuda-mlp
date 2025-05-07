@@ -83,8 +83,8 @@ private:
     Tensor *gradInput; // pointer to grad wrt input
 
 public:
-    LinearLayer(int inSize, int outSize, int batchSize)
-        : inSize(inSize), outSize(outSize), batchSize(batchSize)
+    LinearLayer(int inSize, int outSize)
+        : inSize(inSize), outSize(outSize)
     {
         d_weight = new Tensor(inSize * outSize);
         d_bias = new Tensor(outSize);
@@ -122,6 +122,11 @@ public:
 
     Tensor *forward(Tensor *inputTensor) override
     {
+        batchSize = inputTensor->getSize() / inSize; // number of samples in the batch
+        if (batchSize <= 0)
+        {
+            throw std::runtime_error("Invalid batch size in LinearLayer forward pass.");
+        }
         this->input = inputTensor; // store for backward
         if (!output)
         {
